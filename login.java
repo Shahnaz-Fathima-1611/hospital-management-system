@@ -29,6 +29,8 @@ public class login {
         JButton b=new JButton("Login");
         b.setBounds(40,140,120,30);
         b.setFont(new Font("serif",Font.BOLD,15));
+        b.setBackground(Color.WHITE);
+        b.setForeground(Color.BLACK);
         f.add(b);
         f.setVisible(true);
     }
