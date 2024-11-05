@@ -35,7 +35,7 @@ public class login extends JFrame implements ActionListener
         JLabel password = new JLabel("Password: ");
         password.setBounds(40,70,100,30);
         password.setForeground(new Color(235, 240, 239));
-        password.setFont(new Font("Helvetica",Font.BOLD,16));
+        password.setFont(new Font("Tahoma",Font.BOLD,16));
         f.add(password);
 
 
