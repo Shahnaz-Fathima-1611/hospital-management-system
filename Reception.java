@@ -12,13 +12,14 @@ class Reception extends JFrame {
         JPanel panel1= new JPanel();
         panel1.setLayout(null);
         panel1.setBounds(5,160,1525,670);
-        panel1.setBackground(new Color(0,0,0));
+        panel1.setBackground(new Color(162,42,42));
+
         add(panel1);
 
         JPanel panel2= new JPanel();
         panel2.setLayout(null);
         panel2.setBounds(3,5,1525,150);
-        panel2.setBackground(new Color(109,164,170));
+        panel2.setBackground(new Color(163,126,46));
         add(panel2);
 
         JButton bt1= new JButton(("Add New Patient"));
@@ -72,7 +73,7 @@ class Reception extends JFrame {
         bt5.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //new Patient_discharge();
+                new Patient_discharge();
             }
         });
 
@@ -83,7 +84,7 @@ class Reception extends JFrame {
         bt6.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //new Logout();
+                setVisible(false);
             }
         });
 

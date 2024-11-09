@@ -10,32 +10,38 @@ import java.sql.ResultSet;
 
 public class login extends JFrame implements ActionListener
 {
+    JFrame f;
+
     JTextField txtfield;
 
     JPasswordField pwfield;
 
-    JButton b;
+    JButton b,b1;
 
 
     login() {
-        JFrame f = new JFrame("Login");
+        f = new JFrame("Login");
         f.setLayout(null);
+        f.setTitle("Health Desk");
+        f.setSize(420,420);
+
         f.setLocation(300, 250);
         f.setSize(750, 300);
-        f.getContentPane().setBackground(new Color(5, 0, 4));
+        f.getContentPane().setBackground(new Color(247,225,184));
 
 
         JLabel username = new JLabel("Username: ");
         username.setBounds(40,20,100,30);
-        username.setForeground(new Color(235, 240, 239));
+        username.setForeground(new Color(201,44,78));
         username.setFont(new Font("Tahoma",Font.BOLD,16));
+
         f.add(username);
 
 
         JLabel password = new JLabel("Password: ");
         password.setBounds(40,70,100,30);
-        password.setForeground(new Color(235, 240, 239));
-        password.setFont(new Font("Tahoma",Font.BOLD,16));
+        password.setForeground(new Color(201,44,78));
+        password.setFont(new Font("Helvetica",Font.BOLD,16));
         f.add(password);
 
 
@@ -55,6 +61,17 @@ public class login extends JFrame implements ActionListener
         b.addActionListener(this);
         f.add(b);
         f.setVisible(true);
+
+        b1=new JButton("Cancel");
+        b1.setBounds(180,140,120,30);
+        b1.setFont(new Font("serif",Font.BOLD,15));
+        b1.addActionListener(this);
+        f.add(b1);
+        f.setVisible(true);
+
+
+
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
     @Override
@@ -67,12 +84,15 @@ public class login extends JFrame implements ActionListener
                 String user= txtfield.getText();
                 String pass= pwfield.getText();
 
-                String q="select * from login where ID= '"+user+"' and PW '"+pass+"'";
+                String q="select * from login where ID= '"+user+"' and PW= '"+pass+"'";
                 ResultSet resultSet=c.statement.executeQuery(q);
 
                 if(resultSet.next()){
-                    new test();
-                    setVisible(false);
+                    new Reception();
+                    //JOptionPane.showMessageDialog(null,"Logged in");
+                    f.setVisible(false);
+                    dispose();
+
                 }
                 else {
                     JOptionPane.showMessageDialog(null,"Invalid");
