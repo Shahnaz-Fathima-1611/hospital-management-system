@@ -17,15 +17,15 @@ public class New_patient extends JFrame implements ActionListener {
 
     New_patient() {
         JPanel panel = new JPanel();
-        panel.setBounds(5, 5, 840, 540);
-        panel.setBackground(new Color(182, 114, 212));
+        panel.setBounds(5, 5, 840, 490);
+        panel.setBackground(new Color(232	,74	,95));
         panel.setLayout(null);
         add(panel);
 
         JLabel labelName = new JLabel("NEW PATIENT FORM");
         labelName.setBounds(118, 11, 260, 53);
         labelName.setFont(new Font("Tahoma", Font.BOLD, 20));
-        labelName.setForeground(new Color(82,10,115));
+        labelName.setForeground(new Color(42,54, 59));
         panel.add(labelName);
 
         JLabel labelID = new JLabel("ID :");
@@ -36,7 +36,7 @@ public class New_patient extends JFrame implements ActionListener {
 
         comboBox = new JComboBox(new String[]{"Aadhar Card", "VoterID", "Driving License"});
         comboBox.setBounds(271, 73, 150, 20);
-        comboBox.setBackground(new Color(90, 24, 120));
+        comboBox.setBackground(new Color(42,54, 59));
         comboBox.setForeground(Color.white);
         comboBox.setFont(new Font("Tahoma", Font.BOLD, 14));
         panel.add(comboBox);
@@ -70,14 +70,14 @@ public class New_patient extends JFrame implements ActionListener {
         r1 = new JRadioButton("Male");
         r1.setFont(new Font("Tahoma", Font.BOLD, 14));
         r1.setForeground(Color.WHITE);
-        r1.setBackground(new Color(90, 24, 120));
+        r1.setBackground(new Color(42,54, 59));
         r1.setBounds(271, 191, 80, 15);
         panel.add(r1);
 
         r2 = new JRadioButton("Female");
         r2.setFont(new Font("Tahoma", Font.BOLD, 14));
         r2.setForeground(Color.WHITE);
-        r2.setBackground(new Color(90, 24, 120));
+        r2.setBackground(new Color(42,54, 59));
         r2.setBounds(350, 191, 80, 15);
         panel.add(r2);
 
@@ -112,7 +112,7 @@ public class New_patient extends JFrame implements ActionListener {
         c1.setBounds(271, 274, 150, 20);
         c1.setFont(new Font("Tahoma", Font.BOLD, 14));
         c1.setForeground(Color.WHITE);
-        c1.setBackground(new Color(90, 24, 120));
+        c1.setBackground(new Color(42,54, 59));
         panel.add(c1);
 
         JLabel labelTime = new JLabel("Time :");
@@ -142,7 +142,7 @@ public class New_patient extends JFrame implements ActionListener {
         b1 = new JButton("Add");
         b1.setBounds(100, 430, 120, 30);
         b1.setForeground(Color.WHITE);
-        b1.setBackground(new Color(90, 24, 120));
+        b1.setBackground(new Color(42,54, 59));
         b1.setFont(new Font("Tahoma", Font.BOLD, 14));
         b1.addActionListener(this);
         panel.add(b1);
@@ -150,15 +150,15 @@ public class New_patient extends JFrame implements ActionListener {
         b2 = new JButton("Back");
         b2.setBounds(260, 430, 120, 30);
         b2.setForeground(Color.WHITE);
-        b2.setBackground(new Color(90, 24, 120));
+        b2.setBackground(new Color(42,54, 59));
         b2.setFont(new Font("Tahoma", Font.BOLD, 14));
         b2.addActionListener(this);
         panel.add(b2);
 
         setUndecorated(true);
-        setSize(850, 550);
+        setSize(850, 500);
         setLayout(null);
-        setLocation(250, 100);
+        setLocation(400, 210);
         setVisible(true);
 
 
