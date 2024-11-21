@@ -1,8 +1,6 @@
 package hospital.management.system;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.Statement;
+import java.sql.*;
 
 public class conn{
     Connection connection;
@@ -12,7 +10,8 @@ public class conn{
     public conn(){
 
         try{
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital_management_system","root","Root");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital_management_system","root","shasql#1611");
             statement= connection.createStatement();
 
 
