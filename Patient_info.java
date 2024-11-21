@@ -1,3 +1,4 @@
+
 package hospital.management.system;
 
 import net.proteanit.sql.DbUtils;
@@ -13,14 +14,14 @@ public class Patient_info extends JFrame {
     Patient_info(){
 
         JPanel panel=new JPanel();
-        panel.setBounds(5,5,890,590);
-        panel.setBackground(new Color(90,156,163));
+        panel.setBounds(5,5,990,490);
+        panel.setBackground(new Color(232	,74	,95));
         panel.setLayout(null);
         add(panel);
 
         JTable table = new JTable();
-        table.setBounds(10,40,900,450);
-        table.setBackground(new Color(90,156,163));
+        table.setBounds(10,45,980,400);
+        table.setBackground(new Color(232	,74	,95));
         panel.add(table);
 
         try{
@@ -39,38 +40,38 @@ public class Patient_info extends JFrame {
         label1.setFont(new Font("Tahoma",Font.BOLD,14));
         panel.add(label1);
 
-        JLabel label2= new JLabel("Number");
-        label2.setBounds(150,11,100,14);
+        JLabel label2= new JLabel("Name");
+        label2.setBounds(145,11,100,14);
         label2.setFont(new Font("Tahoma",Font.BOLD,14));
         panel.add(label2);
 
-        JLabel label3 = new JLabel("Name");
-        label3.setBounds(270,11,100,14);
+        JLabel label3 = new JLabel("Number");
+        label3.setBounds(265,11,100,14);
         label3.setFont(new Font("Tahoma",Font.BOLD,14));
         panel.add(label3);
 
         JLabel label4 = new JLabel("Gender");
-        label4.setBounds(360,11,100,14);
+        label4.setBounds(380,11,100,14);
         label4.setFont(new Font("Tahoma",Font.BOLD,14));
         panel.add(label4);
 
         JLabel label5 = new JLabel("Disease");
-        label5.setBounds(480,11,100,14);
+        label5.setBounds(500,11,100,14);
         label5.setFont(new Font("Tahoma",Font.BOLD,14));
         panel.add(label5);
 
-        JLabel label6 = new JLabel("Room");
-        label6.setBounds(600,11,100,14);
+        JLabel label6 = new JLabel("Room Number");
+        label6.setBounds(625,11,110,14);
         label6.setFont(new Font("Tahoma",Font.BOLD,14));
         panel.add(label6);
 
         JLabel label7 = new JLabel("Time");
-        label7.setBounds(800,11,100,14);
+        label7.setBounds(745,11,100,14);
         label7.setFont(new Font("Tahoma",Font.BOLD,14));
         panel.add(label7);
 
         JLabel label8 = new JLabel("Deposit");
-        label8.setBounds(680,11,100,14);
+        label8.setBounds(870,11,100,14);
         label8.setFont(new Font("Tahoma",Font.BOLD,14));
         panel.add(label8);
 
@@ -87,9 +88,10 @@ public class Patient_info extends JFrame {
         });
         setUndecorated(true);
 
-        setSize(1000,600);
+        setUndecorated(true);
         setLayout(null);
-        setLocation(430,100);
+        setSize(1000,500);
+        setLocation(350,200);
         setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
