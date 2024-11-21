@@ -12,8 +12,8 @@ public class Patient_discharge extends JFrame {
     Patient_discharge(){
 
         JPanel panel = new JPanel();
-        panel.setBounds(5,5,790,390);
-        panel.setBackground(new Color(90,156,163));
+        panel.setBounds(5,5,990,490);
+        panel.setBackground(new Color(232	,74	,95));
         panel.setLayout(null);
         add(panel);
 
@@ -93,7 +93,21 @@ public class Patient_discharge extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 conn c= new conn();
                 try{
-                    c.statement.executeUpdate("delete from Patient_info where number='"+choice.getSelectedItem()+"'");
+                    // Step 1: Retrieve Room_Number associated with the selected patient Number
+                    ResultSet rs = c.statement.executeQuery("SELECT Room_Number FROM Patient_info WHERE Number='" + choice.getSelectedItem() + "'");
+                    String roomNumber = null;
+                    if (rs.next()) {
+                        roomNumber = rs.getString("Room_Number");
+                    }
+
+// Step 2: Delete the row from Patient_info
+                    c.statement.executeUpdate("DELETE FROM Patient_info WHERE Number='" + choice.getSelectedItem() + "'");
+
+// Step 3: Update the Room table only if Room_Number was found
+                    if (roomNumber != null) {
+                        c.statement.executeUpdate("UPDATE Room SET Availability = 'Available' WHERE Room_No = '" + roomNumber + "'");
+                    }
+
                     JOptionPane.showMessageDialog(null,"Done");
                     setVisible(false);
 
@@ -133,7 +147,7 @@ public class Patient_discharge extends JFrame {
                 try {
                     ResultSet resultSet = c.statement.executeQuery("select * from Patient_info where number='" + choice.getSelectedItem() + "'");
                     if (resultSet.next()) {  // Use if since we expect a single row for the selected number
-                        RNo.setText(resultSet.getString("Room"));    // Make sure column name matches exactly in your database
+                        RNo.setText(resultSet.getString("Room_Number"));    // Make sure column name matches exactly in your database
                         INTime.setText(resultSet.getString("Time")); // Make sure column name matches exactly in your database
                     } else {
                         JOptionPane.showMessageDialog(null, "No record found for selected patient number.");
@@ -159,20 +173,20 @@ public class Patient_discharge extends JFrame {
         });
 
 
-        setSize(800,400);
+        setUndecorated(true);
         setLayout(null);
-        setLocation(400,250);
+        setSize(1000,500);
+        setLocation(350,200);
         setVisible(true);
 
 
-}
+    }
 
 
     public static void main(String[] args) {
         new Patient_discharge();
     }
 }
-
 
 
 
