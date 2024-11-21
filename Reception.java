@@ -11,64 +11,73 @@ class Reception extends JFrame {
     Reception(){
         JPanel panel1= new JPanel();
         panel1.setLayout(null);
-        panel1.setBounds(5,160,1525,670);
-        panel1.setBackground(new Color(162,42,42));
-
+        panel1.setBounds(0,155,1525,670);
+        panel1.setBackground(new Color(	42,54, 59));
         add(panel1);
 
         JPanel panel2= new JPanel();
         panel2.setLayout(null);
-        panel2.setBounds(3,5,1525,150);
-        panel2.setBackground(new Color(163,126,46));
+        panel2.setBounds(0,0,1525,150);
+        panel2.setBackground(new Color(	232	,74	,95));
         add(panel2);
 
         JButton bt1= new JButton(("Add New Patient"));
-        bt1.setBounds(30,5,200,30);
-        bt1.setBackground(new Color(246,215,118));
+        bt1.setBounds(30,25,200,30);
+        bt1.setBackground(new Color(255,255,255));
+        bt1.setForeground(Color.BLACK);
+        bt1.setFont(new Font("Tahoma",Font.BOLD,16));
         panel1.add(bt1);
         bt1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                 //new New_patient();
+                new New_patient();
             }
         });
 
         JButton bt2 = new JButton("Room");
-        bt2.setBounds(30,50,200,30);
-        bt2.setBackground(new Color(246,215,118));
+        bt2.setBounds(30,75,200,30);
+        bt2.setBackground(new Color(255,255,255));
+        bt2.setForeground(Color.BLACK);
+        bt2.setFont(new Font("Tahoma",Font.BOLD,16));
         panel1.add(bt2);
         bt2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                 //new Room();
+                new Room();
             }
         });
 
-        JButton bt3 = new JButton("All Employee Info");
-        bt3.setBounds(30,95,200,30);
-        bt3.setBackground(new Color(246,215,118));
+        JButton bt3 = new JButton("Employee Info");
+        bt3.setBounds(30,125,200,30);
+        bt3.setBackground(new Color(255,255,255));
+        bt3.setForeground(Color.BLACK);
+        bt3.setFont(new Font("Tahoma",Font.BOLD,16));
         panel1.add(bt3);
         bt3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //new emp_info();
+                new Employee_info();
             }
         });
 
         JButton bt4 = new JButton("Patient Info");
-        bt4.setBounds(30,140,200,30);
-        bt4.setBackground(new Color(246,215,118));
+        bt4.setBounds(30,175,200,30);
+        bt4.setBackground(new Color(255,255,255));
+        bt4.setForeground(Color.BLACK);
+        bt4.setFont(new Font("Tahoma",Font.BOLD,16));
         panel1.add(bt4);
         bt4.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new Patient_info();
+               new  Patient_info();
             }
         });
 
         JButton bt5 = new JButton("Patient Discharge");
-        bt5.setBounds(30,180,200,30);
-        bt5.setBackground(new Color(246,215,118));
+        bt5.setBounds(30,225,200,30);
+        bt5.setBackground(new Color(255,255,255));
+        bt5.setForeground(Color.BLACK);
+        bt5.setFont(new Font("Tahoma",Font.BOLD,16));
         panel1.add(bt5);
         bt5.addActionListener(new ActionListener() {
             @Override
@@ -78,17 +87,22 @@ class Reception extends JFrame {
         });
 
         JButton bt6 = new JButton("Logout");
-        bt6.setBounds(30,220,200,30);
-        bt6.setBackground(new Color(246,215,118));
+        bt6.setBounds(30,275,200,30);
+        bt6.setBackground(new Color(255,255,255));
+        bt6.setForeground(Color.BLACK);
+        bt6.setFont(new Font("Tahoma",Font.BOLD,16));
         panel1.add(bt6);
         bt6.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                //new Logout();
                 setVisible(false);
+                new login();
             }
         });
 
-        setSize(1950,1090);
+       // setSize(1500,750);
+        setBounds(-5,0,1500,750);
         getContentPane().setBackground(new Color(225,225,225));
         setLayout(null);
         setVisible(true);
